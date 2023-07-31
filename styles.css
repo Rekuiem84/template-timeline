@@ -20,13 +20,13 @@ section {
 }
 /* Mandatory (M) for timeline 1 */
 .timeline1 {
-	--horizontal-spacing: 3rem;
+	--horizontal-spacing: 5rem;
 	--horizontal-line-height: 16px;
 	--vertical-spacing: 2rem;
 	--vertical-line-width: 32px;
 	--date-bubble-size: 140px;
-	/* If --max-text-width is not set, the max width will be 100% */
-	--max-text-width: 730px;
+	/* If --max-text-width is not set, --max-timeline-width will be 100% */
+	/* --max-text-width: 730px; */
 	--max-timeline-width: calc(
 		var(--date-bubble-size) + var(--horizontal-spacing) + var(--max-text-width)
 	);
@@ -34,7 +34,9 @@ section {
 }
 /* (M) Template for the cell */
 .timeline1 .timeline__cell {
-	width: min(100%, var(--max-timeline-width, 100%));
+	/* Set --max-timeline-width here for an absolute max size */
+	--max-timeline-width: 1920px;
+	width: var(--max-timeline-width, 100%);
 	display: grid;
 	grid-template-columns: var(--date-bubble-size) var(--horizontal-spacing) auto;
 	grid-auto-rows: var(--date-bubble-size) auto var(--vertical-spacing);
