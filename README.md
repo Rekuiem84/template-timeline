@@ -12,6 +12,7 @@ CSS:
 
 - **grid-auto-rows**
 - **grid-template-areas** and **grid-area**
+- **@container** with **container-type**
 
 # Note
 
