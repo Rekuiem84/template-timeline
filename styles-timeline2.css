@@ -1,0 +1,94 @@
+/* Mandatory (M) for timeline 2 */
+.timeline2 {
+	--color-accent: #2035aa;
+	--color-text: #121212;
+	--color-background: #fafdff;
+	--gap: 3rem;
+	--vertical-line-width: 4px;
+	/*  */
+	color: var(--color-text);
+	background-color: var(--color-background);
+	/* Background pattern */
+	--size: 120px; /* control the size */
+	--clr1: hsl(0, 0%, 11%);
+	--clr2: hsl(220, 2%, 31%);
+	--clr3: hsl(0, 0%, 24%);
+	background: repeating-conic-gradient(
+				from 30deg,
+				#0000 0 120deg,
+				var(--clr3) 0 180deg
+			)
+			calc(0.5 * var(--size)) calc(0.5 * var(--size) * 0.577),
+		repeating-conic-gradient(
+			from 30deg,
+			var(--clr1) 0 60deg,
+			var(--clr2) 0 120deg,
+			var(--clr3) 0 180deg
+		);
+	background-size: var(--size) calc(var(--size) * 0.577);
+}
+.timeline2 > div {
+	--max-bubble-width: 72ch;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	gap: var(--gap);
+	container-type: inline-size;
+}
+.timeline2 .vertical-line {
+	justify-self: right;
+	width: var(--vertical-line-width);
+	height: 100%;
+	background-color: var(--color-background);
+}
+.timeline2 .bubbles-cont {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+.timeline2 .timeline__bubble {
+	background-color: var(--color-background);
+	color: var(--color-text);
+	position: relative;
+	padding: 1.3rem 1.5rem;
+	border-radius: 0.8rem;
+	/* max-width: var(--max-bubble-width); */
+}
+.timeline2 .timeline__bubble::before {
+	position: absolute;
+	content: "";
+}
+.timeline2 .timeline__bubble::before {
+	--tiny-bubble-width: 16px;
+	width: var(--tiny-bubble-width);
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: var(--color-accent);
+	box-shadow: 0 0 0 4px var(--color-background);
+	left: calc(
+		-1 * var(--gap) - var(--vertical-line-width) / 2 - var(--tiny-bubble-width) /
+			2
+	);
+}
+
+.timeline2 .timeline__bubble h2 {
+	font-size: 2.2rem;
+	text-transform: uppercase;
+	line-height: 1;
+
+	& + h3 {
+		margin-top: 0.2rem;
+	}
+	& ~ p {
+		margin-top: 1rem;
+	}
+}
+.timeline2 .timeline__bubble h3 {
+	font-size: 1.6rem;
+
+	& ~ p {
+		margin-top: 1rem;
+	}
+}
+.timeline2 .timeline__bubble p {
+	font-size: 1.2rem;
+}
