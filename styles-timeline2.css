@@ -71,24 +71,21 @@
 }
 
 .timeline2 .timeline__bubble h2 {
-	font-size: 2.2rem;
+	font-size: clamp(1.5rem, 4vw, 2.2rem);
 	text-transform: uppercase;
 	line-height: 1;
 
 	& + h3 {
-		margin-top: 0.2rem;
-	}
-	& ~ p {
-		margin-top: 1rem;
+		margin-top: 0.1em;
 	}
 }
 .timeline2 .timeline__bubble h3 {
-	font-size: 1.6rem;
-
-	& ~ p {
-		margin-top: 1rem;
-	}
+	font-size: clamp(1.2rem, 3vw, 1.6rem);
 }
 .timeline2 .timeline__bubble p {
-	font-size: 1.2rem;
+	font-size: clamp(1rem, 2.5vw, 1.2rem);
+	text-wrap: balance;
+}
+.timeline2 .timeline__bubble p:nth-child(n + 2) {
+	margin-top: 0.5em;
 }
