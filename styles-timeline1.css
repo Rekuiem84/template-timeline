@@ -1,8 +1,10 @@
 /* Mandatory (M) for timeline 1 */
 .timeline1 {
 	--color-accent: #76b829;
-	--color-text: #121212;
-	--color-background: #f0f4f7;
+	--color-background: #ffffff;
+	--color-date-content: #121212;
+	--color-text-bubble: #ffffff;
+	--color-text-content: var(--color-date-content);
 	/*  */
 	--horizontal-spacing: 5rem;
 	--horizontal-line-height: 16px;
@@ -15,6 +17,7 @@
 		var(--date-bubble-size) + var(--horizontal-spacing) + var(--max-text-width)
 	);
 	container-type: inline-size;
+	background-color: var(--color-background);
 }
 /* (M) Template for the cell */
 .timeline1 .timeline__cell {
@@ -46,6 +49,7 @@
 	width: min(100%, var(--date-bubble-size));
 	height: min(100%, var(--date-bubble-size));
 	aspect-ratio: 1;
+	color: var(--color-date-content);
 }
 .timeline__cell .timeline__date--empty {
 	width: var(--vertical-line-width);
@@ -62,6 +66,8 @@
 	height: fit-content;
 	margin-top: 20px;
 	z-index: 2;
+	color: var(--color-text-content);
+	background-color: var(--color-text-bubble);
 }
 .timeline__cell .timeline__vertical {
 	grid-area: vertical;
@@ -173,7 +179,6 @@
 	padding: 1rem;
 }
 .timeline__cell .timeline__text {
-	background-color: white;
 	border-radius: 0.8rem;
 	box-shadow: -6px 6px 10px rgba(100, 100, 100, 0.3);
 	font-size: 1.2rem;
